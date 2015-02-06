@@ -1,0 +1,45 @@
+/*
+ * Customer can modify the code we provided.
+ * Lanner doesn't warrant the source code.
+ */
+
+/*
+ * The Parallel LCM Driver - Comiple and Usage 
+ */
+Please make you had enable the Parallel Port in the BIOS.
+If you can not "insmod" the Parallel LCM driver, you have
+to check the setting in the BIOS first.
+
+Please compile the source code in your Linux.
+After compiled, you will have the binary files.
+1. plcm_drv.o | plcm_drv.ko (Kernel mode driver module)
+2. plcm_test (User mode driver testing program)
+3. plcm_cursor_char (User mode driver testing program for cursor shift & single text update)
+4. Test (User mode testing script)
+Please run "Test" for testing the parallel LCM functions.
+
+If you want to add the driver module into your Linux.
+Please see the "Test" or "Makefile" first.
+For exmaple:
+You have to run "mknod /dev/plcm_drv c 241 0" to create the device file.
+
+If you have any question or requirement, please contact with the sales. 
+
+
+/*
+ * Release Note
+ */
+
+Version 0.0.1
+1. Initial version.
+2. Support the basic LCM commands.
+3. Support the file read and write functions.
+4. Support 2.4.x and 2.6.x in the Makefile.
+5. Provide the use mode source code for test.
+6. Automaticlly check the character device file in /dev by the Makefile. 
+7. Automaticlly generate the test script in the Makefile.
+8. Support CGRAM initialize demo code and characters in the driver.
+9. Support CGRAM test case demo code in the test application.
+10. Support cursor shifting (cursor movement) and single text character update
+11. Add plcm_cursor_char.c for testing sursor shifting and single text char update
+12. Set initail line to 1st line in code plcm_cursor_char.c 
